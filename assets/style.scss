@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+body {
+  width: auto;
+  height: 800px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 15px;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+  margin: 15px;
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  height: 75%;
+}
+
+.box-supervisor {
+  grid-column: 2;
+  grid-row: 2 / span 2; 
+}
+
+.box-team-builder {
+  grid-column: 3;
+  grid-row: 1 / span 2;
+}
+
+.box-karma {
+  grid-column: 3;
+  grid-row: 3 / span 4;
+  margin-bottom: 50px;
+}
+
+.box-calculator {
+  grid-column: 4;
+  grid-row: 2 / span 2;
+}
+
+
+
+//  mixin pour le h1 h2 h3 h4 -------------
+h1 {
+  font-size: 26px;
+  color: hsl(234, 12%, 34%);
+  font-weight: 400;
+  margin: 40px 0px 0px;
+  grid-column: 2;
+  grid-row: 1;
+
+}
+
+h2 {
+  font-size: 28px;
+  color: hsl(235, 86%, 17%);
+  font-weight: 600;
+  margin-top: 0px;
+  grid-column: 2;
+  grid-row: 2;
+}
+
+h3 {
+  font-size: 16px;
+  color: hsl(234, 12%, 34%, 0.5);
+  font-weight: 200;
+  margin: 0px;
+  grid-column: 2;
+  grid-row: 3;
+}
+
+h4 {
+  font-size: 16px;
+  color: hsl(235, 86%, 17%);
+  font-weight: bolder;
+  margin-left: 30px;
+  text-transform: uppercase;
+  
+  
+}
+
+p {
+  margin-left: 30px;
+  color: hsl(234, 12%, 34%, 0.5)
+}
+
+img {
+  float: right;
+  margin-right: 30px;
+  margin-bottom: 30px;
+  margin-top: 40px;
+  // display: flex;
+	// flex-direction: row;
+	// flex-wrap: nowrap;
+	// justify-content: flex-end;
+	// align-items: flex-end;
+  // position: absolute;
+  // // top: right;
+  // bottom: bottom;
+
+
+}
+
+
+
+
+
+
+// faire une mixin ici
+
+
+
+
+@mixin border-styling($top-color) {
+  border-top: 3px solid $top-color;
+  box-shadow: 0px 7px 25px hsl(234, 12%, 34%, 0.5);
+  margin: 20px;
+  border-radius: 5px;
+  position: relative;
+ 
+}
+
+.box-supervisor {
+  @include border-styling(hsl(180, 62%, 55%));
+}
+
+.box-team-builder {
+  @include border-styling(hsl(0, 78%, 62%));
+}
+
+.box-karma {
+  @include border-styling(hsl(34, 97%, 64%));
+}
+
+.box-calculator {
+  @include border-styling(hsl(212, 86%, 64%));
+}
+
+
+
+ 
+
+
+
+
+//   ---------------------------------
+
+//   @media only screen and (max-width: 375px) {
+//     .body {
+//       display: flex;
+//       flex-direction: column;
+//     }
+
+//   }
